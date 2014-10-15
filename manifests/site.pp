@@ -21,7 +21,7 @@ hiera_include('classes')
 
 # Define filebucket 'main':
 filebucket { 'main':
-  server => 'tyopuppet01',
+  server => 'localhost',
   path   => false,
 }
 
