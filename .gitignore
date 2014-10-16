@@ -1,0 +1,5 @@
+*.rpmnew
+Puppetfile.lock
+.tmp/
+modules/
+ssl/
