@@ -26,11 +26,11 @@ Listen 8140
 
         SSLCertificateFile      <%= @certificate %>
         SSLCertificateKeyFile   <%= @private_key %>
-        SSLCertificateChainFile /var/lib/puppet/ssl/certs/ca.pem
-        SSLCACertificateFile    /var/lib/puppet/ssl/certs/ca.pem
+        SSLCertificateChainFile <%= @ca_chain %>
+        SSLCACertificateFile    <%= @ca_certificate %>
         # If Apache complains about invalid signatures on the CRL, you can try disabling
         # CRL checking by commenting the next line, but this is not recommended.
-        SSLCARevocationFile     /var/lib/puppet/ssl/ca/ca_crl.pem
+	SSLCARevocationFile     <%= @ca_revocation %>
         # Apache 2.4 introduces the SSLCARevocationCheck directive and sets it to none
         # which effectively disables CRL checking; if you are using Apache 2.4+ you must
         # specify 'SSLCARevocationCheck chain' to actually use the CRL.
