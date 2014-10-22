@@ -6,8 +6,8 @@
 :sources:
   :hiera:
     :remote:  git://repo.apac.inin.com/hiera-data.git
-    :basedir: '/var/lib/puppet/hiera'
+    :basedir: '/var/lib/hiera'
 
 # purge non-existing data
 :purgedirs:
-  - '/var/lib/puppet/hiera'
+  - '/var/lib/hiera'
