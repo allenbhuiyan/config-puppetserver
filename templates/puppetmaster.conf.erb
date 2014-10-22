@@ -40,6 +40,9 @@ Listen 8140
         # The `ExportCertData` option is needed for agent certificate expiration warnings
         SSLOptions +StdEnvVars +ExportCertData
 
+	# Set the keep alive timeout high enough to benefit from puppet 3.7 improvements
+	KeepAliveTimeout 20
+
         # This header needs to be set if using a loadbalancer or proxy
         RequestHeader unset X-Forwarded-For
 
