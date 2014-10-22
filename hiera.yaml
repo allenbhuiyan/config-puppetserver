@@ -1,35 +1,30 @@
 ---
-:backends:
-  - json
-:json:
-  :datadir: /var/lib/puppet/hiera
-:logger: console
-:hierarchy:
-  - "nodes/%{::environment}/%{::clientcert}"
-  - "nodes/%{::clientcert}"
-  - "profiles/%{::environment}/%{::location}"
-  - "profiles/%{::location}"
-  - "profiles/%{::environment}/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
-  - "profiles/%{::environment}/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}"
-  - "profiles/%{::environment}/%{::virtual}/%{::operatingsystem}-%{::operatingsystemtype}"
-  - "profiles/%{::environment}/%{::virtual}/%{::operatingsystem}"
-  - "profiles/%{::environment}/%{::virtual}/common"
-  - "profiles/%{::environment}/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
-  - "profiles/%{::environment}/%{::operatingsystem}-%{::operatingsystemrelease}"
-  - "profiles/%{::environment}/%{::operatingsystem}-%{::operatingsystemtype}"
-  - "profiles/%{::environment}/%{::operatingsystem}"
-  - "profiles/%{::environment}/common"
-  - "profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
-  - "profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}"
-  - "profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemtype}"
-  - "profiles/%{::virtual}/%{::operatingsystem}"
-  - "profiles/%{::virtual}/common"
-  - "profiles/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
-  - "profiles/%{::operatingsystem}-%{::operatingsystemrelease}"
-  - "profiles/%{::operatingsystem}-%{::operatingsystemtype}"
-  - "profiles/%{::operatingsystem}"
-  - "profiles/common"
-  - "common/%{::environment}/%{::calling_module}"
-  - "common/%{::calling_module}"
-  - "common/%{::environment}"
-  - common
+ :backends:
+   - json
+ :json:
+   :datadir: /var/lib/hiera
+ :logger: console
+ :hierarchy:
+   - "%{::environment}/nodes/%{::clientcert}"
+   - "%{::environment}/nodes/%{::fqdn}"
+   - "%{::environment}/profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
+   - "%{::environment}/profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}"
+   - "%{::environment}/profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemtype}"
+   - "%{::environment}/profiles/%{::virtual}/%{::operatingsystem}"
+   - "%{::environment}/profiles/%{::virtual}/common"
+   - "%{::environment}/profiles/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
+   - "%{::environment}/profiles/%{::operatingsystem}-%{::operatingsystemrelease}"
+   - "%{::environment}/profiles/%{::operatingsystem}-%{::operatingsystemtype}"
+   - "%{::environment}/profiles/%{::operatingsystem}"
+   - "%{::environment}/profiles/common"
+   - "common/profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
+   - "common/profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemrelease}"
+   - "common/profiles/%{::virtual}/%{::operatingsystem}-%{::operatingsystemtype}"
+   - "common/profiles/%{::virtual}/%{::operatingsystem}"
+   - "common/profiles/%{::virtual}/common"
+   - "common/profiles/%{::operatingsystem}-%{::operatingsystemrelease}-%{::operatingsystemtype}"
+   - "common/profiles/%{::operatingsystem}-%{::operatingsystemrelease}"
+   - "common/profiles/%{::operatingsystem}-%{::operatingsystemtype}"
+   - "common/profiles/%{::operatingsystem}"
+   - "common/profiles/common"
+   - "common/common"

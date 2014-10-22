@@ -1,0 +1,13 @@
+---
+# location for cached repositories
+:cachedir: '/var/cache/r10k'
+
+# git repositories containing environments
+:sources:
+  :hiera:
+    :remote:  git://repo.apac.inin.com/hiera-data.git
+    :basedir: '/var/lib/puppet/hiera'
+
+# purge non-existing data
+:purgedirs:
+  - '/var/lib/puppet/hiera'
