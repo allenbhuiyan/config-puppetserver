@@ -1,4 +1,3 @@
 *.rpmnew
-routes.yaml
 modules/
 ssl/
