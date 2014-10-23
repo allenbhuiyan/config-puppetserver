@@ -1,5 +1,4 @@
 *.rpmnew
-Puppetfile.lock
-.tmp/
+routes.yaml
 modules/
 ssl/
